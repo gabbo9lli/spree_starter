@@ -1,14 +1,18 @@
-FROM ruby:3.2.0
+FROM ruby:2.7.2
 
 RUN apt-get update -yq \
   && apt-get upgrade -yq \
   #ESSENTIALS
-  && apt-get install -y -qq --no-install-recommends build-essential curl git-core vim passwd unzip cron gcc wget netcat \
-  # RAILS PACKAGES NEEDED
-  && apt-get update \
+  && apt-get install -y -qq --no-install-recommends build-essential curl git-core vim passwd unzip cron gcc wget netcat
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends libc-bin libc6 zlib1g-dev liblzma-dev patch
+
+# RAILS PACKAGES NEEDED
+RUN  apt-get update \
   && apt-get install -y --no-install-recommends imagemagick postgresql-client libvips \
   # INSTALL NODE
-  && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
+  && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
   && apt-get install -y --no-install-recommends nodejs \
   # INSTALL YARN
   && npm install -g yarn
@@ -24,7 +28,8 @@ COPY package.json yarn.lock
 RUN yarn install
 
 # install specific version of bundler
-RUN gem install bundler -v 2.2.32
+RUN gem install bundler -v 2.1.4
+RUN bundle config set force_ruby_platform true
 
 ENV BUNDLE_GEMFILE=/app/Gemfile \
   BUNDLE_JOBS=20 \

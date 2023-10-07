@@ -27,6 +27,7 @@ services:
     volumes:
       - 'bundle_cache:/bundle'
       - '.:/app'
+      - '../spree_43:/spree_43'
       - .env:/app/.env
     environment:
       REDIS_URL: redis://redis:6379/0
@@ -45,6 +46,7 @@ services:
       - 'bundle_cache:/bundle'
       - '.:/app'
       - .env:/app/.env
+      - '../spree_43:/spree_43'
     environment:
       REDIS_URL: redis://redis:6379/0
       DB_HOST: postgres
