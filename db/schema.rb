@@ -648,8 +648,8 @@ ActiveRecord::Schema.define(version: 2022_02_12_222077) do
   create_table "spree_products_stores", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "store_id"
-    t.datetime "created_at", default: "2023-10-07 07:03:07", null: false
-    t.datetime "updated_at", default: "2023-10-07 07:03:07", null: false
+    t.datetime "created_at", default: "2023-10-07 07:44:43", null: false
+    t.datetime "updated_at", default: "2023-10-07 07:44:43", null: false
     t.index ["product_id", "store_id"], name: "index_spree_products_stores_on_product_id_and_store_id", unique: true
     t.index ["product_id"], name: "index_spree_products_stores_on_product_id"
     t.index ["store_id"], name: "index_spree_products_stores_on_store_id"
