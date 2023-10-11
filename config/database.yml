@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: spree_starter_development
+  database: retebio_production
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
   username: <%= ENV.fetch('DB_USER', 'postgres') %>
   port: <%= ENV.fetch('DB_PORT', '5432') %>
