@@ -5,5 +5,5 @@ set -o errexit
 docker compose up -d redis postgres
 bin/wait-for-services
 
-psql -h 127.0.0.1 -p 5432 -U postgres -c 'create database retebio_production'
-psql -h 127.0.0.1 -p 5432 -U postgres -f /Users/novellig/docker_images/retebio_local/dump_prod_231011.sql -1 
+# psql -h 127.0.0.1 -p 5432 -U postgres -c 'create database retebio_production'
+# psql -h 127.0.0.1 -p 5432 -U postgres -f /Users/novellig/docker_images/retebio_local/dump_prod_231011.sql -1 
