@@ -78,21 +78,21 @@ gem 'rack-cache', '~> 1.13' # http caching
 gem 'sidekiq', '~> 6'
 gem 'nokogiri', '~> 1.13'
 
-git 'https://github.com/gabbo9lli/spree.git', branch: 'retebio_43' do
-  gem 'spree'
-  gem 'spree_sample'
-  gem 'spree_emails'
-  gem 'spree_backend'
-  gem 'spree_frontend'
-end
-# gem 'spree', path: '..' #prod
-# gem 'spree_frontend', path: '../frontend' #prod
-# gem 'spree_emails', path: '../emails' #prod
-# gem 'spree_sample', path: '../sample' #prod
-# gem 'spree_backend', path: '../backend' #prod
-# gem 'spree_auth_devise', '~> 4.3' #prod
-# gem 'spree_gateway', '~> 3.9' #prod
-# gem 'spree_i18n', '~> 5.0' #github: 'spree-contrib/spree_i18n', tag: 'v5.0.0' #branch: 'main' #prod
+# git 'https://github.com/gabbo9lli/spree.git', branch: 'retebio_43' do
+#   gem 'spree'
+#   gem 'spree_sample'
+#   gem 'spree_emails'
+#   gem 'spree_backend'
+#   gem 'spree_frontend'
+# end
+gem 'spree', path: '../spree' #prod
+gem 'spree_frontend', path: '../spree/frontend' #prod
+gem 'spree_emails', path: '../spree/emails' #prod
+gem 'spree_sample', path: '../spree/sample' #prod
+gem 'spree_backend', path: '../spree/backend' #prod
+gem 'spree_auth_devise', '~> 4.3' #prod
+gem 'spree_gateway', '~> 3.9' #prod
+gem 'spree_i18n', '~> 5.0' #github: 'spree-contrib/spree_i18n', tag: 'v5.0.0' #branch: 'main' #prod
 
 # Spree gems
 # gem 'spree', '~> 4.5'
