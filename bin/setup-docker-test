@@ -8,9 +8,10 @@ export DB_HOST=127.0.0.1
 export DB_PORT=5432
 bin/start-db-redis-containers
 
+#bundle config set force_ruby_platform true &&
+
 docker compose run --rm web bash -c '
   bin/wait-for-services &&
-  bundle config set force_ruby_platform true &&
   bundle config --local local.spree ../spree_43 &&
   echo "vvvvafffancuuulo" &&
   bundle config --local local.spree_frontend ../spree_43/frontend &&

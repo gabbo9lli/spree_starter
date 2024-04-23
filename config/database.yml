@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: retebio_production
+  database: retebio_43_aws_production
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
   username: <%= ENV.fetch('DB_USER', 'postgres') %>
   port: <%= ENV.fetch('DB_PORT', '5432') %>

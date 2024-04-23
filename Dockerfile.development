@@ -39,7 +39,7 @@ ENV BUNDLE_GEMFILE=/app/Gemfile \
 ENV PATH="${BUNDLE_BIN}:${PATH}"
 
 COPY Gemfile Gemfile.lock ./
-RUN bundle install
+# RUN bundle install
 
 EXPOSE 4000
 
